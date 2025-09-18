@@ -1,12 +1,18 @@
 name: Deploy to GitHub Pages
 
 on:
+push:
+  branches:
+    - main
+  tags:
+    - "v*"
+
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    tags:
-      - "v*"
+inputs:
+ref:
+desceiption: Branch or tag to deploy
+required: false
+default: ""
 
 permissions:
   contents: read
