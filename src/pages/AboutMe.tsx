@@ -25,7 +25,7 @@ export default function AboutMe() {
         <div className="rounded-xl border border-slate-800 bg-slate-800/50 p-5 transition hover:bg-slate-800">
           <h2 className="text-2xl font-bold">hyoka7</h2>
           <p className="mt-2 text-slate-400">
-            競技プログラミングが好きです。最近はフロントエンドもちょっとずつ勉強しています。ゆくゆくはバックエンドも触ってみたい...
+            競技プログラミングが好きです。最近はフロントエンドもちょっとずつ勉強しています。ゆくゆくはバックエンドも触ってみたいです...
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <CreateBadges id="x" href="https://x.com/hyokahyk" />
