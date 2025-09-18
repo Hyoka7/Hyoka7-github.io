@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 2s step-start infinite;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
