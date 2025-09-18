@@ -3,7 +3,7 @@ import CreateBadges from "./components/CreateBadges";
 
 function ProfilePhoto() {
   return (
-    <div className="relative w-full max-w-[120px] mx-auto md:mx-0 flex-shrink-0">
+    <div className="relative w-full max-w-sm mx-auto md:mx-0 md:w-1/3 flex-shrink-0">
       <div className="aspect-square overflow-hidden rounded-2xl border border-slate-700 bg-slate-800">
         <img
           src={profilePhoto}

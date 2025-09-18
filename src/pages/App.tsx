@@ -4,7 +4,7 @@ import ShootingStars from "./components/ShootingStar";
 function Navigation() {
   return (
     <nav className="sticky top-0 z-20 border-b bg-slate-700 backdrop-blur-lg">
-      <div className="mx-auto flex max-w-4xl items-center justify-between p-4">
+      <div className="flex items-center justify-between p-4">
         <Link to="/" className="font-bold text-white">
           Hyoka7's Homepage
         </Link>

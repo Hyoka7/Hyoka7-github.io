@@ -6,6 +6,8 @@ interface BadgeProps {
 }
 
 export default function CreateBadges({ id, href }: BadgeProps) {
+  const urlId = id.toLowerCase();
+
   const normalized = id.toLowerCase().replace(/\s+/g, "").replace(/_/g, "");
   const label =
     {
@@ -15,15 +17,15 @@ export default function CreateBadges({ id, href }: BadgeProps) {
       tailwindcss: "Tailwind CSS",
       github: "GitHub",
       githubpages: "GitHub Pages",
-      "next.js": "Next.js",
+      nextjs: "Next.js",
       vercel: "Vercel",
       x: "X",
-    }[normalized] ?? normalized;
+    }[normalized] ?? id;
 
   const badgeContent = (
     <>
       <img
-        src={`https://cdn.simpleicons.org/${normalized}`}
+        src={`https://cdn.simpleicons.org/${urlId}`}
         alt={`${label} のロゴ`}
         className="h-4 w-4"
         loading="lazy"
