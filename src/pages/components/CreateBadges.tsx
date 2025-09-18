@@ -15,7 +15,7 @@ export default function CreateBadges({ id, href }: BadgeProps) {
       tailwindcss: "Tailwind CSS",
       github: "GitHub",
       githubpages: "GitHub Pages",
-      nextjs: "Next.js",
+      "next.js": "Next.js",
       vercel: "Vercel",
       x: "X",
     }[normalized] ?? normalized;

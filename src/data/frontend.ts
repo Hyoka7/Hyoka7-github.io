@@ -14,7 +14,7 @@ export type HomepageProject = {
 export const homepageproject: HomepageProject[] = [
   {
     slug: "portfolio",
-    title: "Hyoka7's page",
+    title: "Hyoka7's Homepage",
     summary: "ReactとTypescriptを使用した個人サイト。",
     jumplink: "https://hyoka7.github.io/Hyoka7-github.io/",
     repolink: "https://github.com/Hyoka7/Hyoka7-github.io",
