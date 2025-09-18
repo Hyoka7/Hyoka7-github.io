@@ -1,40 +1,49 @@
-name: Deploy to GitHub Pages
+name: Deploy Vite to GitHub Pages
 
 on:
   push:
     branches:
       - main
-    tags:
-      - "v*"
   workflow_dispatch:
-    inputs:
-      ref:
-        description: "Branch or tag to deploy"
-        required: false
-        default: ""
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.ref || github.ref }}
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "npm"
-      - run: ls -la
-      - run: npm ci
-      - run: npm run build
-      - run: cp dist/index.html dist/404.html
-      - uses: actions/upload-pages-artifact@v3
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Copy 404.html
+        run: cp dist/index.html dist/404.html
+
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-      - id: deploy
+
+      - name: Deploy to GitHub Pages
+        id: deploy
         uses: actions/deploy-pages@v4
