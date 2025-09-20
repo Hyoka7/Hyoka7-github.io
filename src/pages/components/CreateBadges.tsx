@@ -7,7 +7,6 @@ interface BadgeProps {
 
 export default function CreateBadges({ id, href }: BadgeProps) {
   const urlId = id.toLowerCase();
-
   const normalized = id.toLowerCase().replace(/\s+/g, "").replace(/_/g, "");
   const label =
     {
@@ -18,6 +17,10 @@ export default function CreateBadges({ id, href }: BadgeProps) {
       github: "GitHub",
       githubpages: "GitHub Pages",
       nextjs: "Next.js",
+      streamlit:"Streamlit",
+      python:"Python",
+      word2vec:"Word2Vec",
+      fasttext:"FastText",
       vercel: "Vercel",
       x: "X",
     }[normalized] ?? id;

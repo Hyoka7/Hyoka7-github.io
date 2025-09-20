@@ -38,12 +38,24 @@ function Navigation() {
     </nav>
   );
 }
+
+function Footer(){
+  return (
+    <footer className="border-t border-slate-800 bg-slate-700/50 p-4 text-center text-sm text-slate-300">
+      &copy; {new Date().getFullYear()} Hyoka7 All Rights Reserved.
+    </footer>
+  );
+}
+
 export default function App() {
   return (
-    <div className="bg-slate-900 text-white min-h-screen relative">
+    <div className="relative flex min-h-screen flex-col bg-slate-900 text-white">
       <Navigation />
       <ShootingStars />
-      <Outlet />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 }
